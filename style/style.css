@@ -1,0 +1,123 @@
+body{
+    background-image: url(/style/background.png.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-position: bottom;
+    
+}
+.h1{
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 2px rgb(109, 109, 109);
+    text-align: center;
+    font-size: 70px;
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+.art{
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    padding-top: 1%;
+    padding-left: 4%;
+}
+.img{
+    width: 150px;
+    height: 150px;
+    border: solid 4px rgb(78, 224, 235);
+    border-radius: 100%;
+}
+.sh{
+    padding-top: 6%;
+   padding-left: 5%;
+ 
+}
+.submet{
+    background-color: rgb(135, 240, 247);
+    font-size: 13px;
+    font-family: "Nosifer", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.bk{
+    
+    background-color: rgb(106, 230, 205);
+    border: solid 4px rgb(79, 95, 101);
+}
+.bord2{
+    width: 100%;
+
+}
+.ar{
+    width:140px;
+    height: 140px;
+    border-radius: 100%;
+    border: solid 5px rgb(251, 251, 251);
+    
+}
+
+.hr{
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 2px rgb(109, 109, 109);
+    text-align: center;
+    font-size: 50px;
+    font-family: "Nosifer", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.mem{
+    width: 100%;
+    display: inline-flex;
+    margin-right: 10px;
+}
+   details {
+    margin-bottom: 50px;
+    width: 100%;  
+}
+.members{
+    cursor: pointer;
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  font-size: 25px;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    text-align: center;
+    list-style:none;
+}
+ul {
+    text-align: center;
+  font-size: large;
+  font-weight: bold;
+    padding-left: 20px;
+    list-style: none;
+}
+.Back{
+    background-color: rgb(106, 230, 205);
+    width:10%;
+    text-align: center;
+    border: solid 2px;
+    position: fixed;
+    bottom: 20px;
+    left: 45%;
+}
+.a{
+    font-size: 50px;
+    text-decoration: none;
+    font-weight: bolder;
+    color: black;
+
+
+}
+.members:hover{
+    color: rgb(150, 150, 153);
+}
+
+.submet:hover{
+    background-color: rgb(175, 179, 179);
+}
+.a:hover{
+   color: rgb(130, 126, 126);
+}
