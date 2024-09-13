@@ -40,10 +40,17 @@ func Fetch(s, id string) {
 		err = json.Unmarshal(data, &Cards.Conc)
 	} else if s == "relations" {
 		err = json.Unmarshal(data, &Cards.Rela)
+	}else{
+		return
 	}
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	 fmt.Println(Cards.Art.Members)
+	for location, dates := range Cards.Rela.Relation {
+        fmt.Println("Location:", location)
+        for _, date := range dates {
+            fmt.Println("  Date:", date)
+        }
+    }
 }

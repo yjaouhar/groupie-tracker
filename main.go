@@ -9,9 +9,10 @@ import (
 )
 
 func main() {
+	groupie.Fetch("artists", "")
 	http.HandleFunc("/style/", groupie.Style)
 	http.HandleFunc("/", groupie.Gethandel)
-	http.HandleFunc("/index2.html", groupie.Posthandel)
+	http.HandleFunc("/artist/{id}", groupie.Posthandel)
 	fmt.Println("http://localhost:8082")
 	log.Fatal(http.ListenAndServe(":8082", nil))
 

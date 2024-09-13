@@ -36,9 +36,9 @@
                 <details>
                     <summary class="members">creationDates</summary>
                     <ul>
-                        {{range .Art.Members}}
-                        <li>{{.}}</li>
-                        {{end}}
+                      
+                        <li>{{.Art.CreationDate}}</li>
+                        
                     </ul>
                     
                 </details>
@@ -53,7 +53,7 @@
                 <details>
                     <summary class="members">locations</summary>
                     <ul>
-                            {{range .Loca}}
+                            {{range .Loca.Locations}}
                             <li>{{.}}</li>
                             {{end}}
                     </ul>
@@ -62,7 +62,7 @@
                 <details>
                     <summary class="members">concertDates</summary>
                     <ul>
-                        {{range .Conc}}
+                        {{range .Conc.Dates}}
                         <li>{{.}}</li>
                         {{end}}
                     </ul>
@@ -71,8 +71,14 @@
                 <details>
                     <summary class="members">relations</summary>
                     <ul>
-                        {{range .Rala}}
-                        <li>{{.}}</li>
+                        {{range $Key, $Values := .Rela.Relations}}
+                        <li>{{$Key}}
+                            <ul>
+                                {{range $Values}}
+                                <li>{{.}}</li>
+                                {{end}}
+                            </ul>
+                        </li>
                         {{end}}
                     </ul>
                 </details>
