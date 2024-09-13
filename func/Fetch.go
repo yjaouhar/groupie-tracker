@@ -8,7 +8,7 @@ import (
 )
 
 func Fetch(s, id string) {
-
+	fmt.Println(Url + s + id)
 	respons, err := http.Get(Url + s + id)
 	if err != nil {
 		fmt.Println(err)
@@ -38,7 +38,7 @@ func Fetch(s, id string) {
 		err = json.Unmarshal(data, &Cards.Loca)
 	} else if s == "dates" {
 		err = json.Unmarshal(data, &Cards.Conc)
-	} else if s == "relations" {
+	} else if s == "relation" {
 		err = json.Unmarshal(data, &Cards.Rela)
 	}else{
 		return
@@ -47,10 +47,5 @@ func Fetch(s, id string) {
 		fmt.Println(err)
 		return
 	}
-	for location, dates := range Cards.Rela.Relation {
-        fmt.Println("Location:", location)
-        for _, date := range dates {
-            fmt.Println("  Date:", date)
-        }
-    }
+	fmt.Println(Cards.Rela)
 }

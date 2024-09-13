@@ -32,7 +32,7 @@ func Posthandel(w http.ResponseWriter, r *http.Request) {
 	Cards.Art = Artist[IDa-1]
 	Fetch("locations", "/"+id)
 	Fetch("dates", "/"+id)
-	Fetch("relations", "/"+id)
+	Fetch("relation", "/"+id)
 
 	temp.Execute(w, Cards)
 
