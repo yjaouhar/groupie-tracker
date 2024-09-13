@@ -6,6 +6,7 @@ import (
 )
 
 func Gethandel(w http.ResponseWriter, r *http.Request) {
+	Fetch(w, "artists", "")
 	if r.URL.Path != "/" {
 		http.Error(w, "404 page not found ", http.StatusNotFound)
 	}
@@ -20,6 +21,6 @@ func Gethandel(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		http.Error(w, "500 Internal server error", http.StatusInternalServerError)
 	}
-	
+
 	temp.Execute(w, Artist)
 }

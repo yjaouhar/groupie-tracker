@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func Er(temp *template.Template, w http.ResponseWriter) {
+func ExecuteTemplate(temp *template.Template, w http.ResponseWriter) {
 	var buf bytes.Buffer
 	err := temp.Execute(&buf, Cards)
 	if err != nil {
