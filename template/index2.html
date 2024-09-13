@@ -34,37 +34,46 @@
                 </details>
 
                 <details>
-                    <summary class="members">creationDatebers</summary>
+                    <summary class="members">creationDates</summary>
                     <ul>
-                        <li>Creation Date: 1965</li>
+                        {{range .Art.Members}}
+                        <li>{{.}}</li>
+                        {{end}}
                     </ul>
+                    
                 </details>
 
                 <details>
                     <summary class="members">firstAlbum</summary>
                     <ul>
-                        <li>The Piper at the Gates of Dawn (1967)</li>
+                        <li>{{.Art.FirstAlbum}}</li>
                     </ul>
                 </details>
 
                 <details>
                     <summary class="members">locations</summary>
                     <ul>
-                        <li>London, United Kingdom</li>
+                            {{range .Loca}}
+                            <li>{{.}}</li>
+                            {{end}}
                     </ul>
                 </details>
 
                 <details>
                     <summary class="members">concertDates</summary>
                     <ul>
-                        <li>1970s - 2010s</li>
+                        {{range .Conc}}
+                        <li>{{.}}</li>
+                        {{end}}
                     </ul>
                 </details>
 
                 <details>
                     <summary class="members">relations</summary>
                     <ul>
-                        <li>Influenced by The Beatles, Led Zeppelin</li>
+                        {{range .Rala}}
+                        <li>{{.}}</li>
+                        {{end}}
                     </ul>
                 </details>
 
