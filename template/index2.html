@@ -21,7 +21,7 @@
                 <center>
                     <img src="{{.Art.Image}}" alt="artist" class="ar">
                 </center>
-            </div>s
+            </div>
 
             <div class="mem">
                 <details>
@@ -36,11 +36,11 @@
                 <details>
                     <summary class="members">creationDates</summary>
                     <ul>
-                      
+
                         <li>{{.Art.CreationDate}}</li>
-                        
+
                     </ul>
-                    
+
                 </details>
 
                 <details>
@@ -53,9 +53,9 @@
                 <details>
                     <summary class="members">locations</summary>
                     <ul>
-                            {{range .Loca.Locations}}
-                            <li>{{.}}</li>
-                            {{end}}
+                        {{range .Loca.Locations}}
+                        <li>{{.}}</li>
+                        {{end}}
                     </ul>
                 </details>
 
