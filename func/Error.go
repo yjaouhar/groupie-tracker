@@ -6,9 +6,9 @@ import (
 )
 
 func Error( w http.ResponseWriter, message string, status int) {
-	tmp, err := template.ParseFiles("static/error.html")
+	tmp, err := template.ParseFiles("template/error.html")
 	if err != nil {
-		http.Error(w, "enternal server error", http.StatusInternalServerError)
+		http.Error(w, "mok server error", http.StatusInternalServerError)
 		return
 	}
 	w.WriteHeader(status)

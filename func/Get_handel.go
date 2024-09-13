@@ -9,10 +9,11 @@ func Gethandel(w http.ResponseWriter, r *http.Request) {
 	Fetch(w, "artists", "")
 	if r.URL.Path != "/" {
 		Error(w, "Page Not Found", http.StatusNotFound)
+		return
 	}
 
 	if r.Method != http.MethodGet {
-		Error(w, "Methode not allowed", http.StatusMethodNotAllowed)
+		Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 		return
 	}
 
