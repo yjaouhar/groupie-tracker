@@ -7,16 +7,22 @@ import (
 )
 
 func Fetch(w http.ResponseWriter, s, id string) {
-	respons, err := http.Get(Url + s + id)
+	response, err := http.Get(Url + s + id)
 	if err != nil {
-		Error(w, "Failed to make GET request", http.StatusInternalServerError)
+		Error(w, "Internal server error", http.StatusInternalServerError)
 		return
 	}
-	defer respons.Body.Close()
+	defer response.Body.Close()
 
-	data, err := io.ReadAll(respons.Body)
+	if response.StatusCode != http.StatusOK {
+		if err != nil {
+			Error(w, "Internal server error", http.StatusInternalServerError)
+			return
+		}
+	}
+	data, err := io.ReadAll(response.Body)
 	if err != nil {
-		Error(w, "Failed to read response body", http.StatusInternalServerError)
+		Error(w, "Internal server error", http.StatusInternalServerError)
 		return
 	}
 	if s == "artists" && !Fetched {
@@ -32,7 +38,7 @@ func Fetch(w http.ResponseWriter, s, id string) {
 		return
 	}
 	if err != nil {
-		Error(w, "Failed to unmarshal JSON response", http.StatusBadRequest)
+		Error(w, "Internal server error", http.StatusBadRequest)
 		return
 	}
 }

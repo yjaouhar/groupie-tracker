@@ -9,14 +9,9 @@ import (
 func Posthandel(w http.ResponseWriter, r *http.Request) {
 	id := r.PathValue("id")
 	IDa, er := strconv.Atoi(id)
-	if er != nil {
-		Error(w, "Bad request", http.StatusBadRequest)
+	if er != nil || IDa <= 0 || IDa > 52 {
+		Error(w, "Page Not Found", http.StatusNotFound)
 		return
-	} else {
-		if IDa <= 0 || IDa > 52 {
-			Error(w, "Page Not Found", http.StatusNotFound)
-			return
-		}
 	}
 
 	if r.URL.Path != "/artist/"+id {
