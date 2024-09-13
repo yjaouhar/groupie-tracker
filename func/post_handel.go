@@ -13,15 +13,21 @@ func Posthandel(w http.ResponseWriter, r *http.Request) {
 	 if er != nil {
 		fmt.Println("mokzina")
 		return
+	 }else{
+		if IDa <= 0 || IDa > 52 {
+			http.Error(w, "mok zina ", http.StatusNotFound)
+			return
+		}
 	 }
+
 	if r.URL.Path != "/artist/"+id {
 		http.Error(w, "404 Page not found", http.StatusNotFound)
 		return
 	}
-	if r.Method != http.MethodPost {
-		http.Error(w, "405 Methode not allow", http.StatusMethodNotAllowed)
-		return
-	}
+	// if r.Method != http.MethodPost {
+	// 	http.Error(w, "405 Methode not allow", http.StatusMethodNotAllowed)
+	// 	return
+	// }
 
 	temp, err := template.ParseFiles("template/index2.html")
 	if err != nil {

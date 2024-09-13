@@ -1,5 +1,6 @@
 package groupie
 
+
 var (
 	Artist      Artists
 	Location    Locations
