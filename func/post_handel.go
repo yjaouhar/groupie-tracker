@@ -10,7 +10,7 @@ func Posthandel(w http.ResponseWriter, r *http.Request) {
 	id := r.PathValue("id")
 	IDa, er := strconv.Atoi(id)
 	if er != nil {
-		http.Error(w, "Bad request", http.StatusBadRequest)
+		Error(w, "Bad request", http.StatusBadRequest)
 		return
 	} else {
 		if IDa <= 0 || IDa > 52 {

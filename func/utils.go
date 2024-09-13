@@ -11,7 +11,12 @@ var (
 	Id          int
 )
 
-	type Artists []struct {
+type Err struct {
+	Status int
+	Message string
+}
+
+type Artists []struct {
 	ID           int      `json:"id"`
 	Image        string   `json:"image"`
 	Name         string   `json:"name"`
