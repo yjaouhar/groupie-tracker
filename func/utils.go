@@ -6,7 +6,7 @@ var (
 	ConcertDate ConcertDates
 	Relation    Relations
 	Cards       Card
-	Fetched bool
+	Fetched     bool
 )
 
 type Artists []struct {

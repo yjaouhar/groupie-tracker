@@ -7,8 +7,7 @@ body{
     
 }
 .H1{
-    /* background-color: red; */
-    height:100px;
+     height:100px;
 }
 .h1{
     color: rgb(0, 0, 0);
@@ -18,37 +17,28 @@ body{
     font-family: "Protest Guerrilla", sans-serif;
     font-weight: 100;
     font-style: normal;
-    position: fixed;
-    top: 0;
+    position: fixed; 
+    top: 0; 
     left: 40%;
 }
 
 .art{
-    /* background-color: red; */
     width: fit-content;
     border-radius: 5px;
-    padding-top: 150px;
+    padding-top: 100px;
     padding-left: 4%;
-    padding-right: 4%;
     display: inline-flex;
 
 }
 .img{
-    background-color: yellow;
+    background-color: rgb(78, 224, 235);
     width: 150px;
     height: 150px;
     border: solid 4px rgb(78, 224, 235);
     border-radius: 100%;
-    margin-right: 2%;
 }
 .sh{
-    width: fit-content;
-    display: inline-flex;
-    padding-left: 7%;
-    
-    /* padding-top: 6%; */
-   /* padding-left: 5%; */
- 
+    margin-right: 100px;
 }
 .submet{
     background-color: rgb(135, 240, 247);
@@ -56,9 +46,8 @@ body{
     font-family: "Nosifer", sans-serif;
   font-weight: 400;
   font-style: normal;
-  margin-right: 200px;
-  /* margin-right: 3%; */
-
+  margin-top: 30px;
+  cursor: pointer;
 }
 .bk{
     
@@ -67,14 +56,12 @@ body{
 }
 .bord2{
     width: 100%;
-
 }
 .ar{
     width:140px;
     height: 140px;
     border-radius: 100%;
     border: solid 5px rgb(251, 251, 251);
-    
 }
 
 .hr{

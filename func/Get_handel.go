@@ -18,6 +18,7 @@ func Gethandel(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		http.Error(w, "500 Internal server error", http.StatusInternalServerError)
 	}
-	//fmt.Println(Cards.Art)
+	Fetch("artists","")
+
 	temp.Execute(w, Cards)
 }
