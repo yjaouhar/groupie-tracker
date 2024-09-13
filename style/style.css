@@ -122,39 +122,32 @@ ul {
     color: black;
 }
 .code{
-    font-size: 300px;
+    font-size: 10vw;
     color: rgb(0, 0, 0);
     font-family: "Nosifer", sans-serif;
-    margin-bottom: 0;
-    margin-top: 70px;
- 
-    /* text-shadow: 20px 4 red; 4*/
+    margin-bottom: 5vh;
+    margin-top: 7vh;
     text-shadow: 20px 4px 8px rgb(44, 44, 44);
-
 }
 .message{
-    font-size: 70px;
+    font-size: 5vw;
     color: rgb(0, 0, 0);
     margin-top: 0;
-    padding-top: 0;
+    margin-bottom: 20vh;
     font-family: "Nosifer", sans-serif;
     text-shadow: 10px 4px 10px rgb(44, 44, 44);
-
-
 }
 
 .back{
    background-color:rgb(175, 187, 187);
    border: solid 6px rgb(106, 103, 103);
    border-radius: 30px;
-    font-size: 80px;
+    font-size: 5vw;
     color: rgb(0, 0, 0);
     font-family: "Protest Guerrilla", sans-serif;
     text-decoration: none;
-    padding-left: 20px;
-    padding-right: 20px;
-    
-  
+    padding-left: 2vw;
+    padding-right: 2vw;
 }
 
 .back:hover{
