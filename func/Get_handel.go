@@ -20,5 +20,5 @@ func Gethandel(w http.ResponseWriter, r *http.Request) {
 	}
 	Fetch("artists","")
 
-	temp.Execute(w, Cards)
+	temp.Execute(w, Artist)
 }

@@ -19,7 +19,7 @@
 
             <div class="bord2">
                 <center>
-                    <img src="" alt="artist" class="ar">
+                    <img src="{{.Art.Image}}" alt="artist" class="ar">
                 </center>
             </div>s
 
@@ -27,7 +27,9 @@
                 <details>
                     <summary class="members">members</summary>
                     <ul>
-                        <li>Roger Waters</li>
+                        {{range .Art.Members}}
+                        <li>{{.}}</li>
+                        {{end}}
                     </ul>
                 </details>
 

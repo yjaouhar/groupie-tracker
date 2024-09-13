@@ -7,6 +7,7 @@ var (
 	Relation    Relations
 	Cards       Card
 	Fetched     bool
+	Id          int
 )
 
 type Artists []struct {
@@ -17,6 +18,7 @@ type Artists []struct {
 	CreationDate int      `json:"creationDate"`
 	FirstAlbum   string   `json:"firstAlbum"`
 }
+
 type Locations struct {
 	Locations []string `json:"locations"`
 }
@@ -28,7 +30,14 @@ type Relations struct {
 	Relation map[string][]string `json:"datesLocations"`
 }
 type Card struct {
-	Art  Artists
+	Art struct {
+		ID           int      `json:"id"`
+		Image        string   `json:"image"`
+		Name         string   `json:"name"`
+		Members      []string `json:"members"`
+		CreationDate int      `json:"creationDate"`
+		FirstAlbum   string   `json:"firstAlbum"`
+	}
 	Loca Locations
 	Conc ConcertDates
 	Rela Relations

@@ -33,7 +33,7 @@ func Fetch(s, id string) {
 	// }
 	if s == "artists" && !Fetched {
 		Fetched = true
-		err = json.Unmarshal(data, &Cards.Art)
+		err = json.Unmarshal(data, &Artist)
 	} else if s == "locations" {
 		err = json.Unmarshal(data, &Cards.Loca)
 	} else if s == "dates" {
@@ -45,5 +45,5 @@ func Fetch(s, id string) {
 		fmt.Println(err)
 		return
 	}
-	// fmt.Println(Cards.Rela)
+	 fmt.Println(Cards.Art.Members)
 }

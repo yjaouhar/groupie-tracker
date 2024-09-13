@@ -20,6 +20,8 @@ func Posthandel(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "500 internal server error", http.StatusInternalServerError)
 		return
 	}
+	
+	Cards.Art = Artist[3]
 	Fetch("artists", "/4")
 	temp.Execute(w, Cards)
 
