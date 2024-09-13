@@ -11,15 +11,24 @@
     <title>groupie-tracker</title>
 </head>
 <body>
-    <h1 class="h1">Groupie-Tracker</h1>
-    <div class="art">
-        <img src="/style/pinkfloyd.jpeg" alt="artist" class="img">
-        <div class="sh">
-            <form action="/index2.html" method="get">
-                <input type="submit" value="show artist" class="submet">
-            </form>
-        </div>
+    <div class="H1">
+         <h1 class="h1">Groupie-Tracker</h1>
     </div>
+    <div class="art">
+        {{range .Art}}
+        <img src="{{.Image}}" alt="artist" class="img">
+         {{end}}   
+    </div>
+    <div class="sh">
+  {{range .Art}}
+        <form action="/index2.html" method="get">
+          
+
+            <input type="submit" value="{{.Name}}" class="submet">
+            
+        </form>  
+           {{end}}
+    </div>  
    
 </body>
 </html>

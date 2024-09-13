@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -9,9 +10,11 @@ import (
 
 func main() {
 
-	groupie.Fetch("relation", "/3")
-	//fmt.Println(groupie.Cards.Loca)
-
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	groupie.Fetch("artists", "")
+	http.HandleFunc("/style/", groupie.Style)
+	http.HandleFunc("/", groupie.Gethandel)
+	http.HandleFunc("/index1", groupie.Posthandel)
+	fmt.Println("http://localhost:8081")
+	log.Fatal(http.ListenAndServe(":8081", nil))
 
 }

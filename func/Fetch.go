@@ -21,19 +21,29 @@ func Fetch(s, id string) {
 		return
 	}
 	//err = json.Unmarshal(data, &Cards.Loca)
-	switch s {
-	case "artists":
+	// switch s {
+	// case "artists" && !fetched:
+	// 	err = json.Unmarshal(data, &Cards.Art)
+	// case "locations":
+	// 	err = json.Unmarshal(data, &Cards.Loca)
+	// case "dates":
+	// 	err = json.Unmarshal(data, &Cards.Conc)
+	// case "relation":
+	// 	err = json.Unmarshal(data, &Cards.Rela)
+	// }
+	if s == "artists" && !Fetched {
+		Fetched = true
 		err = json.Unmarshal(data, &Cards.Art)
-	case "locations":
+	} else if s == "locations" {
 		err = json.Unmarshal(data, &Cards.Loca)
-	case "dates":
+	} else if s == "dates" {
 		err = json.Unmarshal(data, &Cards.Conc)
-	case "relation":
+	} else if s == "relations" {
 		err = json.Unmarshal(data, &Cards.Rela)
 	}
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	fmt.Println(Cards.Rela)
+	// fmt.Println(Cards.Rela)
 }
