@@ -2,7 +2,6 @@ package groupie
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"net/http"
 )
@@ -10,12 +9,14 @@ import (
 func Fetch(w http.ResponseWriter, s, id string) {
 	respons, err := http.Get(Url + s + id)
 	if err != nil {
-		fmt.Println(err)
+		Error(w, "Failed to make GET request", http.StatusInternalServerError)
 		return
 	}
+	defer respons.Body.Close()
+
 	data, err := io.ReadAll(respons.Body)
 	if err != nil {
-		fmt.Println(err)
+		Error(w, "Failed to read response body", http.StatusInternalServerError)
 		return
 	}
 	if s == "artists" && !Fetched {
@@ -31,7 +32,7 @@ func Fetch(w http.ResponseWriter, s, id string) {
 		return
 	}
 	if err != nil {
-		fmt.Println(err)
+		Error(w, "Failed to unmarshal JSON response", http.StatusBadRequest)
 		return
 	}
 }
