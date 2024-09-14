@@ -17,5 +17,4 @@ func Error(w http.ResponseWriter, status int) {
 		Message: http.StatusText(status),
 	}
 	ExecuteTemplate(tmp, "err", w, st_temp, status)
-	// tmp.Execute(w, st_temp)
 }

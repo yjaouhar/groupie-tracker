@@ -11,50 +11,50 @@ body{
     background-color: rgb(153, 155, 155);
 }
 .H1{
-     height:100px;
+     height:10vh;
 }
 .h1{
     color: rgb(0, 0, 0);
     text-shadow: 2px 2px 2px rgb(109, 109, 109);
     text-align: center;
-    font-size: 70px;
+    font-size: 7vh;
     font-family: "Protest Guerrilla", sans-serif;
     font-weight: 100;
     font-style: normal;
     position: fixed; 
     top: 0; 
-    left: 40%;
+    left: 40vw;
 }
 
 .art{
     width: fit-content;
     border-radius: 5px;
-    padding-top: 100px;
+    padding-top: 10vh;
     padding-left: 4%;
     display: inline-flex;
 
 }
 .img{
     background-color: rgb(78, 224, 235);
-    width: 150px;
-    height: 150px;
+    width: 8vw;
+    height: 14vh;
     border: solid 4px rgb(78, 224, 235);
     border-radius: 100%;
 }
 .sh{
-    margin-right: 100px;
+    margin-right: 10vh;
 }
 .submet{
     background-color: rgb(135, 240, 247);
-    font-size: 13px;
+    font-size: 1.5vh;
     font-family: "Nosifer", sans-serif;
   font-weight: 400;
   font-style: normal;
-  margin-top: 30px;
+  margin-top: 6vh;
   cursor: pointer;
 }
 .bk{
-    
+    width: 100%;
     background-color: rgb(106, 230, 205);
     border: solid 4px rgb(79, 95, 101);
 }

@@ -6,18 +6,15 @@ import (
 	"net/http"
 )
 
-func Fetch( s, id string) bool{
-	response, err := http.Get(Url +s + id)
+func Fetch(s, id string) bool {
+	response, err := http.Get(Url + s + id)
 	if err != nil {
 		return false
 	}
 	defer response.Body.Close()
 
-	if response.StatusCode != http.StatusOK{
-		if err != nil {
-
-			return false
-		}
+	if response.StatusCode != http.StatusOK {
+		return false
 	}
 	data, err := io.ReadAll(response.Body)
 	if err != nil {

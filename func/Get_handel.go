@@ -11,7 +11,7 @@ func Gethandel(w http.ResponseWriter, r *http.Request) {
 		Error(w, http.StatusNotFound)
 		return
 	}
-	if !Qehba {
+	if !Isfitch {
 		Error(w, http.StatusInternalServerError)
 		return
 	}
@@ -24,7 +24,6 @@ func Gethandel(w http.ResponseWriter, r *http.Request) {
 	temp, err := template.ParseFiles("template/index.html")
 
 	if err != nil {
-		//fmt.Println("mok")
 		Error(w, http.StatusInternalServerError)
 		return
 	}

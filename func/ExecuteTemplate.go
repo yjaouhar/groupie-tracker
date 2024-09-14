@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func ExecuteTemplate(temp *template.Template, s string, w http.ResponseWriter, mok interface{}, status int) {
+func ExecuteTemplate(temp *template.Template, s string, w http.ResponseWriter, info interface{}, status int) {
 	var buf bytes.Buffer
 	var err error
 	if s == "artist" {
@@ -17,14 +17,13 @@ func ExecuteTemplate(temp *template.Template, s string, w http.ResponseWriter, m
 		}
 		temp.Execute(w, Artist)
 	} else if s == "err" {
-		err = temp.Execute(&buf, mok)
+		err = temp.Execute(&buf, info)
 		if err != nil {
 			http.Error(w, "Internal server error", http.StatusInternalServerError)
-			//w.Write([]byte("Internal server error"))
 			return
 		}
 		w.WriteHeader(status)
-		temp.Execute(w, mok)
+		temp.Execute(w, info)
 	} else {
 		err = temp.Execute(&buf, Cards)
 		if err != nil {
