@@ -38,6 +38,6 @@ func Posthandel(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	ExecuteTemplate(temp, "", w, nil)
+	ExecuteTemplate(temp, "", w, nil,0)
 
 }

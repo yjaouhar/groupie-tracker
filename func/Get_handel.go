@@ -29,5 +29,5 @@ func Gethandel(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	ExecuteTemplate(temp, "artist", w, nil)
+	ExecuteTemplate(temp, "artist", w, nil,0)
 }

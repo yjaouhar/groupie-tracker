@@ -11,11 +11,11 @@ func Error(w http.ResponseWriter, status int) {
 		http.Error(w, "Internal server error", http.StatusInternalServerError)
 		return
 	}
-	w.WriteHeader(status)
+	
 	st_temp := Err{
 		Status:  status,
 		Message: http.StatusText(status),
 	}
-	ExecuteTemplate(tmp, "err", w, st_temp)
+	ExecuteTemplate(tmp, "err", w, st_temp, status)
 	// tmp.Execute(w, st_temp)
 }
