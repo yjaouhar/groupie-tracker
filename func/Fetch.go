@@ -6,24 +6,22 @@ import (
 	"net/http"
 )
 
-func Fetch(w http.ResponseWriter, s, id string) {
-	response, err := http.Get(Url + s + id)
+func Fetch( s, id string) bool{
+	response, err := http.Get(Url +s + id)
 	if err != nil {
-		Error(w, "Internal server error", http.StatusInternalServerError)
-		return
+		return false
 	}
 	defer response.Body.Close()
 
-	if response.StatusCode != http.StatusOK {
+	if response.StatusCode != http.StatusOK{
 		if err != nil {
-			Error(w, "Internal server error", http.StatusInternalServerError)
-			return
+
+			return false
 		}
 	}
 	data, err := io.ReadAll(response.Body)
 	if err != nil {
-		Error(w, "Internal server error", http.StatusInternalServerError)
-		return
+		return false
 	}
 	if s == "artists" && !Fetched {
 		Fetched = true
@@ -34,11 +32,9 @@ func Fetch(w http.ResponseWriter, s, id string) {
 		err = json.Unmarshal(data, &Cards.Conc)
 	} else if s == "relation" {
 		err = json.Unmarshal(data, &Cards.Rela)
-	} else {
-		return
 	}
 	if err != nil {
-		Error(w, "Internal server error", http.StatusBadRequest)
-		return
+		return false
 	}
+	return true
 }

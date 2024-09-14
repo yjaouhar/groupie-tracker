@@ -8,7 +8,8 @@ import (
 	groupie "groupie-tracker/func"
 )
 
-func main() {	
+func main() {
+	groupie.Qehba = groupie.Fetch("artists", "")
 	http.HandleFunc("/style/", groupie.Style)
 	http.HandleFunc("/", groupie.Gethandel)
 	http.HandleFunc("/artist/{id}", groupie.Posthandel)

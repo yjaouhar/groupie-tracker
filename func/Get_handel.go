@@ -6,22 +6,28 @@ import (
 )
 
 func Gethandel(w http.ResponseWriter, r *http.Request) {
-	Fetch(w, "artists", "")
+
 	if r.URL.Path != "/" {
-		Error(w, "Page Not Found", http.StatusNotFound)
+		Error(w, http.StatusNotFound)
+		return
+	}
+	if !Qehba {
+		Error(w, http.StatusInternalServerError)
 		return
 	}
 
 	if r.Method != http.MethodGet {
-		Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		Error(w, http.StatusMethodNotAllowed)
 		return
 	}
 
 	temp, err := template.ParseFiles("template/index.html")
 
 	if err != nil {
-		Error(w, "Internal server error", http.StatusInternalServerError)
+		//fmt.Println("mok")
+		Error(w, http.StatusInternalServerError)
+		return
 	}
 
-	temp.Execute(w, Artist)
+	ExecuteTemplate(temp, "artist", w, nil)
 }

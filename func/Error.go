@@ -5,16 +5,17 @@ import (
 	"net/http"
 )
 
-func Error( w http.ResponseWriter, message string, status int) {
+func Error(w http.ResponseWriter, status int) {
 	tmp, err := template.ParseFiles("template/error.html")
 	if err != nil {
-		http.Error(w, "mok server error", http.StatusInternalServerError)
+		http.Error(w, "Internal server error", http.StatusInternalServerError)
 		return
 	}
 	w.WriteHeader(status)
 	st_temp := Err{
-		Status: status,
-		Message: message,
+		Status:  status,
+		Message: http.StatusText(status),
 	}
-	tmp.Execute(w, st_temp)
+	ExecuteTemplate(tmp, "err", w, st_temp)
+	// tmp.Execute(w, st_temp)
 }
