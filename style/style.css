@@ -1,9 +1,10 @@
 body{
     background-image: url(/style/background.png.jpg);
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-attachment: fixed; 
     background-position: bottom;
+    background-color: yellow;
     
 }
 #bo{
@@ -11,13 +12,13 @@ body{
     background-color: rgb(153, 155, 155);
 }
 .H1{
-     height:10vh;
+     height:7vh;
 }
 .h1{
     color: rgb(0, 0, 0);
     text-shadow: 2px 2px 2px rgb(109, 109, 109);
     text-align: center;
-    font-size: 7vh;
+    font-size: 6vh;
     font-family: "Protest Guerrilla", sans-serif;
     font-weight: 100;
     font-style: normal;
@@ -32,21 +33,22 @@ body{
     padding-top: 10vh;
     padding-left: 4%;
     display: inline-flex;
+    background-color: red;
 
 }
 .img{
     background-color: rgb(78, 224, 235);
-    width: 8vw;
-    height: 14vh;
+    width: 5vw;
+    height: 14%;
     border: solid 4px rgb(78, 224, 235);
     border-radius: 100%;
 }
 .sh{
-    margin-right: 10vh;
+    margin-right: 1%;
 }
 .submet{
     background-color: rgb(135, 240, 247);
-    font-size: 1.5vh;
+    font-size: 1.2vh;
     font-family: "Nosifer", sans-serif;
   font-weight: 400;
   font-style: normal;
