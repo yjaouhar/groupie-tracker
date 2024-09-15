@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	groupie.Isfitch = groupie.Fetch("artists", "") // get ipa data and fitched
+	groupie.Isfetched = groupie.Fetch("artists", "") // get ipa data and fitched
 	http.HandleFunc("/style/{file}", groupie.Style)
 	http.HandleFunc("/", groupie.Gethandel)
 	http.HandleFunc("/artist/{id}", groupie.Posthandel)

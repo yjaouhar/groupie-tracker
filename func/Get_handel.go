@@ -5,14 +5,14 @@ import (
 	"net/http"
 )
 
-// Get home page 
-func  Gethandel(w http.ResponseWriter, r *http.Request) {
+// Get home page
+func Gethandel(w http.ResponseWriter, r *http.Request) {
 
 	if r.URL.Path != "/" {
 		Error(w, http.StatusNotFound)
 		return
 	}
-	if !Isfitch {
+	if !Isfetched {
 		Error(w, http.StatusInternalServerError)
 		return
 	}
@@ -28,5 +28,5 @@ func  Gethandel(w http.ResponseWriter, r *http.Request) {
 		Error(w, http.StatusInternalServerError)
 		return
 	}
-	ExecuteTemplate(temp, "artist", w, nil, 0) 
+	ExecuteTemplate(temp, "artist", w, nil, 0)
 }

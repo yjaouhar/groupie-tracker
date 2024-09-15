@@ -9,7 +9,7 @@ var (
 	Cards       Card
 	Fetched     bool
 	Id          int
-	Isfitch bool
+	Isfetched bool
 )
 
 type Err struct {
