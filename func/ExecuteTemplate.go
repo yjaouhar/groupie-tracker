@@ -6,6 +6,7 @@ import (
 	"net/http"
 )
 
+// execute template
 func ExecuteTemplate(temp *template.Template, s string, w http.ResponseWriter, info interface{}, status int) {
 	var buf bytes.Buffer
 	var err error

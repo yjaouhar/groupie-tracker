@@ -6,6 +6,7 @@ import (
 	"strconv"
 )
 
+// poste artiste info
 func Posthandel(w http.ResponseWriter, r *http.Request) {
 	id := r.PathValue("id")
 	IDa, er := strconv.Atoi(id)
@@ -24,6 +25,10 @@ func Posthandel(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	for key := range Cards.Rela.Relation {
+		delete(Cards.Rela.Relation, key)
+
+	}
 	Cards.Art = Artist[IDa-1]
 	if !Fetch("locations", "/"+id) {
 		Error(w, http.StatusInternalServerError)
@@ -38,6 +43,6 @@ func Posthandel(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	ExecuteTemplate(temp, "", w, nil,0)
+	ExecuteTemplate(temp, "", w, nil, 0)
 
 }

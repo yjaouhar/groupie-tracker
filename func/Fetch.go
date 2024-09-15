@@ -6,6 +6,7 @@ import (
 	"net/http"
 )
 
+// get ipa data and fitched
 func Fetch(s, id string) bool {
 	response, err := http.Get(Url + s + id)
 	if err != nil {
